@@ -26,6 +26,10 @@
                                     <constraint firstAttribute="width" secondItem="KV4-Km-WUZ" secondAttribute="height" multiplier="1:1" id="An1-U6-y7c"/>
                                 </constraints>
                                 <state key="normal" image="button_play"/>
+                                <state key="selected" image="button_pause"/>
+                                <connections>
+                                    <action selector="touchUpPlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IBb-3M-bzf"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-nU-8ww">
                                 <rect key="frame" x="28" y="330" width="319" height="31"/>
@@ -54,12 +58,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playPauseButton" destination="KV4-Km-WUZ" id="Qs6-O3-ryL"/>
+                        <outlet property="progressSlider" destination="mXA-nU-8ww" id="vtn-ek-7Pe"/>
+                        <outlet property="timeLabel" destination="ukZ-Xe-do3" id="2At-2q-QLi"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
     <resources>
+        <image name="button_pause" width="185" height="185"/>
         <image name="button_play" width="187" height="189"/>
     </resources>
 </document>
