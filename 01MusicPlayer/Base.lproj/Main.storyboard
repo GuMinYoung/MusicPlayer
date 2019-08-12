@@ -18,11 +18,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KV4-Km-WUZ">
+                                <rect key="frame" x="93" y="60" width="189" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="0Rs-bf-7Yl"/>
+                                    <constraint firstAttribute="width" secondItem="KV4-Km-WUZ" secondAttribute="height" multiplier="1:1" id="An1-U6-y7c"/>
+                                </constraints>
+                                <state key="normal" image="button_play"/>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-nU-8ww">
+                                <rect key="frame" x="28" y="330" width="319" height="31"/>
+                                <color key="tintColor" red="1" green="0.47058823529999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukZ-Xe-do3">
+                                <rect key="frame" x="110" y="279" width="155" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="ciZ-T6-ds1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mXA-nU-8ww" secondAttribute="trailing" constant="30" id="56c-hN-8uZ"/>
+                            <constraint firstItem="mXA-nU-8ww" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OKi-x1-aHH"/>
+                            <constraint firstItem="mXA-nU-8ww" firstAttribute="top" secondItem="ukZ-Xe-do3" secondAttribute="bottom" constant="30" id="P9G-iu-h1d"/>
+                            <constraint firstItem="ukZ-Xe-do3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gNR-PT-HB8"/>
+                            <constraint firstItem="ukZ-Xe-do3" firstAttribute="top" secondItem="KV4-Km-WUZ" secondAttribute="bottom" constant="30" id="hUd-9Z-ITB"/>
+                            <constraint firstItem="KV4-Km-WUZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kKb-8O-MdN"/>
+                            <constraint firstItem="mXA-nU-8ww" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="mQb-id-sLa"/>
+                            <constraint firstItem="KV4-Km-WUZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="ms9-eh-1bP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_play" width="187" height="189"/>
+    </resources>
 </document>
