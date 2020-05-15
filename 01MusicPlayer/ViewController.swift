@@ -42,8 +42,13 @@ class ViewController: UIViewController {
     
     @IBAction func valueChanged(_ sender: UISlider) {
         self.updateTimerLabelText(time: TimeInterval(sender.value))
+        
         // isTracking : 터치 이벤트가 진행 중인지에 대한 Bool 값
-        if sender.isTracking {return}
+        // if sender.isTracking {return}
+        
+        // MARK: *Code Review - guard~else
+        guard sender.isTracking else {return}
+        
         // TimeInterval : 초의 Double 값
         self.player?.currentTime = TimeInterval(sender.value)
     }
@@ -85,7 +90,10 @@ class ViewController: UIViewController {
     
     func makeAndFireTimer() {
         // withTimeInterval : 타이머 실행 시간 간격 (초 단위)
-        self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] (timer : Timer) in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] (timer : Timer) in
+            // MARK: *Code Review - self capturing
+            guard let self = self else {return}
+            
             if self.progressSlider.isTracking {return}
             guard let currentTime = self.player?.currentTime else {
                 return
